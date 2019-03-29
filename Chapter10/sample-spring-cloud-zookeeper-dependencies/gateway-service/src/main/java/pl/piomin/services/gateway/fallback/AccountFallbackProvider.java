@@ -22,7 +22,7 @@ public class AccountFallbackProvider implements FallbackProvider {
 	}
 
 	@Override
-	public ClientHttpResponse fallbackResponse(Throwable cause) {
+	public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
 		return new ClientHttpResponse() {
 			
 			@Override
@@ -60,7 +60,8 @@ public class AccountFallbackProvider implements FallbackProvider {
 			
 		};
 	}
-	
+
+	/*
 	@Override
 	public ClientHttpResponse fallbackResponse() {
 		return new ClientHttpResponse() {
@@ -99,5 +100,6 @@ public class AccountFallbackProvider implements FallbackProvider {
 			
 		};
 	}
+	 */
 
 }

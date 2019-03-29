@@ -3,6 +3,7 @@ package pl.piomin.services.product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -33,7 +34,7 @@ public class ProductApplication {
 	ProductService service;
 	
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(ProductApplication.class).web(true).run(args);
+		new SpringApplicationBuilder(ProductApplication.class).web(WebApplicationType.SERVLET).run(args);
 	}
 
 	@StreamListener(Processor.INPUT)

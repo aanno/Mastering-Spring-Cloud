@@ -2,6 +2,7 @@ package pl.piomin.services.account;
 
 import static springfox.documentation.builders.PathSelectors.any;
 
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -22,7 +23,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class AccountApplication {
 	
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(AccountApplication.class).web(true).run(args);
+		new SpringApplicationBuilder(AccountApplication.class).web(WebApplicationType.SERVLET).run(args);
 	}
 	
 	@Bean

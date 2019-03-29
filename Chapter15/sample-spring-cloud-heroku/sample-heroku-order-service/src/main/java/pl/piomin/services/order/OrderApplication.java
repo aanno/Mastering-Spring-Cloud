@@ -2,10 +2,11 @@ package pl.piomin.services.order;
 
 import static springfox.documentation.builders.PathSelectors.any;
 
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -24,7 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class OrderApplication {
 	
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(OrderApplication.class).web(true).run(args);
+		new SpringApplicationBuilder(OrderApplication.class).web(WebApplicationType.SERVLET).run(args);
 	}
 
 	@Bean

@@ -3,6 +3,7 @@ package pl.piomin.services.boot.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +33,11 @@ public class PersonController {
 	
 	@GetMapping("/{id}")
 	public Person findById(@RequestParam("id") String id) {
-		return repository.findOne(id);
+		Person person = new Person();
+		person.setId(id);
+		// TODO tp: missing ExampleMatcher?
+		Example<Person> example = Example.of(person);
+		return repository.findOne(example).get();
 	}
 	
 	@PostMapping
@@ -44,7 +49,7 @@ public class PersonController {
 	
 	@DeleteMapping("/{id}")
 	public void delete(@RequestParam("id") String id) {
-		repository.delete(id);
+		repository.deleteById(id);
 		counterService.countDeletedPersons();
 	}
 	

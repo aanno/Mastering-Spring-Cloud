@@ -3,31 +3,37 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>pl.piomin.services</groupId>
-		<artifactId>sample-spring-cloud-messaging</artifactId>
+		<artifactId>sample-spring-cloud-messaging-master</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<artifactId>account-service</artifactId>
+	<artifactId>account-service-messaging-master</artifactId>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>net.logstash.logback</groupId>
@@ -37,10 +43,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>pl.piomin.services</groupId>
-			<artifactId>messaging-common</artifactId>
+			<artifactId>messaging-common-messaging-master</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

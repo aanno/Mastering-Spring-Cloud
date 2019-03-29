@@ -1,5 +1,6 @@
 package pl.piomin.service.sample.config;
 
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.config.monitor.GithubPropertyPathNotificationExtractor;
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 public class ConfigApplication {
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(ConfigApplication.class).web(true).run(args);
+		new SpringApplicationBuilder(ConfigApplication.class).web(WebApplicationType.SERVLET).run(args);
 	}
 
 	@Bean

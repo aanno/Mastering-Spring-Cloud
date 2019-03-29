@@ -3,15 +3,17 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>pl.piomin.services</groupId>
-		<artifactId>sample-spring-cloud-comm</artifactId>
+		<artifactId>sample-spring-cloud-comm-hystrix</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<artifactId>hystrix-dashboard</artifactId>
+	<artifactId>hystrix-dashboard-hystrix</artifactId>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 	</dependencies>
 

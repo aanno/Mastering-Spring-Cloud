@@ -1,25 +1,31 @@
 package pl.piomin.services.boot.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.metrics.CounterService;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.Metrics;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PersonCounterService {
 
+    // Spring Boot 1.x
+    /*
 	private final CounterService counterService;
 	
     @Autowired
     public PersonCounterService(CounterService counterService) {
         this.counterService = counterService;
     }
-    
+     */
+
+    private Counter add = Metrics.counter("services.person.add");
+    private Counter del = Metrics.counter("services.person.deleted");
+
     public void countNewPersons() {
-    	this.counterService.increment("services.person.add");
+        add.increment();
     }
-    
+
     public void countDeletedPersons() {
-    	this.counterService.increment("services.person.deleted");
+        del.increment();
     }
-    
+
 }

@@ -3,32 +3,37 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>pl.piomin.services</groupId>
-		<artifactId>sample-spring-cloud-comm</artifactId>
+		<artifactId>sample-spring-cloud-comm-feign-inheritance</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<artifactId>order-service</artifactId>
+	<artifactId>order-service-feign-inheritance</artifactId>
+	<version>1.0-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>pl.piomin.services</groupId>
-			<artifactId>customer-service</artifactId>
+			<artifactId>customer-service-feign-inheritance</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>pl.piomin.services</groupId>
-			<artifactId>product-service</artifactId>
+			<artifactId>product-service-feign-inheritance</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

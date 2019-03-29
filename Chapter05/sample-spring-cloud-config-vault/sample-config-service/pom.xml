@@ -3,15 +3,17 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>pl.piomin.services</groupId>
-		<artifactId>sample-spring-cloud-netflix</artifactId>
+		<artifactId>sample-spring-cloud-config-vault</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<artifactId>sample-config-service</artifactId>
+	<artifactId>sample-config-service-config-vault</artifactId>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 	</dependencies>
 	

@@ -1,14 +1,15 @@
 package pl.piomin.services.account;
 
+import brave.sampler.RateLimitingSampler;
+import brave.sampler.Sampler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
-import org.springframework.cloud.sleuth.Sampler;
-import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Processor;
@@ -37,7 +38,7 @@ public class AccountApplication {
 	AccountService service;
 	
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(AccountApplication.class).web(true).run(args);
+		new SpringApplicationBuilder(AccountApplication.class).web(WebApplicationType.SERVLET).run(args);
 	}
 	
 	@StreamListener(Processor.INPUT)
@@ -73,7 +74,7 @@ public class AccountApplication {
 
 	@Bean
 	public Sampler defaultSampler() {
-		return new AlwaysSampler();
+		return RateLimitingSampler.create(100);
 	}
 	
 }
